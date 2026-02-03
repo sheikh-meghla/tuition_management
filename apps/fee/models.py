@@ -4,7 +4,7 @@ from apps.subject.models import Class, Subject
 class Fee(models.Model):
     class_name = models.ForeignKey(Class, on_delete=models.CASCADE)
     subject = models.ForeignKey(Subject, on_delete=models.CASCADE)
-    month = models.CharField(max_length=20)
+    month = models.DateField()
     amount = models.PositiveIntegerField()
 
     created_at = models.DateTimeField(auto_now_add=True)

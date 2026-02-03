@@ -7,9 +7,9 @@ from apps.fee.models import Fee
 @admin.register(Fee)
 class FeeAdmin(ModelAdmin):
     model = Fee
-    list_display = ("student", "amount", "date_paid",)
-    list_filter = ("student", "date_paid",)
-    search_fields = ("student__email",)
+    list_display = ("class_name","month", "amount", "subject",)
+    list_filter = ("class_name", "month",)
+    search_fields = ("class_name", "subject__name",)
     fieldsets = (
-        (None, {"fields": ("student", "amount", "date_paid",)}),
+        (None, {"fields": ("class_name", "month", "amount", "subject", )}),
     )
